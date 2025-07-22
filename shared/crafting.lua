@@ -14,6 +14,7 @@ Crafting = {
 			{ ["steel"] = { ["ironore"] = 1, ["carbon"] = 1 } },
 			{ ["aluminum"] = { ["can"] = 2, }, ['amount'] = 3 },
 			{ ["glass"] = { ["bottle"] = 2, }, ['amount'] = 2 },
+			{ ["carbon_fibre"] = { ["carbon"] = 5, }, ['amount'] = 1 },
 		},
 	},
 	GemCut = {
