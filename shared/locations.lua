@@ -89,7 +89,7 @@ Locations = {
                 },
             },
             Store = {
-                { name = "冶炼厂商店", coords = vec4(1074.89, -1988.19, 30.89, 235.07), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
+                -- { name = "冶炼厂商店", coords = vec4(1074.89, -1988.19, 30.89, 235.07), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
             },
             Smelting = {
                 { blipEnable = false, name = "冶炼厂", coords = vec3(1112.29, -2009.9, 31.46), sprite = 436, col = 1,  },
@@ -117,7 +117,7 @@ Locations = {
                 col = 81,
             },
             Store = {
-                { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
+                -- { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
             },
             Lights = {
                 Enable = true,
@@ -184,7 +184,7 @@ Locations = {
                 col = 81,
             },
             Store = {
-                { name = "采石场", coords = vec4(2960.9, 2754.14, 43.71, 204.58), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
+                -- { name = "采石场", coords = vec4(2960.9, 2754.14, 43.71, 204.58), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
             },
             Lights = {
                 Enable = true,
@@ -221,7 +221,7 @@ Locations = {
                 col = 81,
             },
             Store = {
-                { name = "洞穴商店", coords = vec4(2908.8, 2643.6, 43.26, 328.32), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
+                -- { name = "洞穴商店", coords = vec4(2908.8, 2643.6, 43.26, 328.32), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
             },
             Smelting = {
                 { blipEnable = false, name = "熔炉", coords = vec3(2921.81, 2653.42, 43.15), sprite = 436, col = 1, },
@@ -286,7 +286,7 @@ Locations = {
                 col = 81,
             },
             Store = {
-                { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
+                -- { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
             },
             Lights = { Enable = false, },
             OrePositions = {
