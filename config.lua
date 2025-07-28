@@ -61,19 +61,22 @@ Config = {
 	},
 
 	CrackPool = { -- Rewards from cracking stone
-		{ item = "carbon", rarity = "70",},
-		{ item = "copperore",rarity = "10",},
-		{ item = "ironore", rarity = "10",},
+		{ item = "carbon", rarity = "40",},
+		{ item = "copperore",rarity = "15",},
+		{ item = "ironore", rarity = "25",},
+		{ item = "metalscrap", rarity = "90",},
+		{ item = "silverore", rarity = "10",},
+		{ item = "goldore", rarity = "5",},
 		{ item = "metalscrap", rarity = "90",},
 	},
 
 	WashPool = {	-- Rewards from washing stone
 		{ item = "goldore", rarity = "10",},
 		{ item = "copperore",rarity = "80",},
-		{ item = "uncut_ruby", rarity = "50" },
-		{ item = "uncut_emerald", rarity = "50"},
-		{ item = "uncut_diamond", rarity = "10"},
-		{ item = "uncut_sapphire", rarity = "50"},
+		{ item = "uncut_ruby", rarity = "20" },
+		{ item = "uncut_emerald", rarity = "20"},
+		{ item = "uncut_diamond", rarity = "5"},
+		{ item = "uncut_sapphire", rarity = "20"},
 	},
 
 	PanPool = {		-- Rewards from panning
@@ -101,7 +104,7 @@ Config = {
 ------------------------------------------------------------
 --Mining Store Items
 	Items = {
-		label = "Mining Store",  slots = 9,
+		label = "采矿商店",  slots = 9,
 		items = {
 			{ name = "water", price = 2, amount = 100, info = {}, type = "item", slot = 1, },
 			{ name = "sandwich", price = 2, amount = 250, info = {}, type = "item", slot = 2, },
