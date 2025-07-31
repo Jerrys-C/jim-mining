@@ -1,4 +1,5 @@
 local function GetRandItemFromTable(table)
+	debugPrint("^5Debug^7: ^2Picking random item from table^7")
 	::start::
 	local randNum = math.random(1, 100)
 	local items = {}
@@ -12,7 +13,7 @@ local function GetRandItemFromTable(table)
 	end
 	local rand = math.random(1, #items)
 	local selectedItem = items[rand]
-	debugPrint("Selected item "..selectedItem.." - rand: "..rand.." leng: "..#items)
+	debugPrint("^5Debug^7: ^2Selected item ^7'^3"..selectedItem.."^7' - ^2rand^7: "..rand.." ^2length^7: "..#items)
 	return selectedItem
 end
 
@@ -28,7 +29,7 @@ RegisterServerEvent(getScript()..":Reward", function(data)
 		if carryCheck[data.setReward] then
 			addItem(data.setReward, amount,  nil, src)
 		else
-			triggerNotify(nil, locale("error", "full"), "error")
+			triggerNotify(nil, locale("error", "full"), "error", src)
 		end
 
 	elseif data.crack then
@@ -42,7 +43,7 @@ RegisterServerEvent(getScript()..":Reward", function(data)
 			removeItem("stone", data.cost, src)
 			addItem(selectedItem, amount, nil, src)
 		else
-			triggerNotify(nil, locale("error", "full"), "error")
+			triggerNotify(nil, locale("error", "full"), "error", src)
 		end
 
 	elseif data.wash then
@@ -77,7 +78,7 @@ RegisterServerEvent(getScript()..":Reward", function(data)
 				addItem(item, amount, nil, src)
 			end
 		else
-			triggerNotify(nil, locale("error", "full"), "error")
+			triggerNotify(nil, locale("error", "full"), "error", src)
 		end
 
 	elseif data.pan then
@@ -91,6 +92,8 @@ RegisterServerEvent(getScript()..":Reward", function(data)
 
 			if selectedItem and canCarryCheck[selectedItem] then
 				addItem(selectedItem, amount, nil, src)
+			else
+				triggerNotify(nil, locale("error", "full"), "error", src)
 			end
 		end
 
