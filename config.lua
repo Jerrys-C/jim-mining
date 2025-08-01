@@ -67,7 +67,6 @@ Config = {
 		{ item = "metalscrap", rarity = "90",},
 		{ item = "silverore", rarity = "10",},
 		{ item = "goldore", rarity = "5",},
-		{ item = "metalscrap", rarity = "90",},
 	},
 
 	WashPool = {	-- Rewards from washing stone
