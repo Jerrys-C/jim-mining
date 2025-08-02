@@ -8,22 +8,34 @@ Mining = {
 }
 
 local propTable = {
-	{ full = "cs_x_rubweec", empty = "prop_rock_5_a" },
+	{ full = "bzzz_prop_mine_stone_a", empty = "prop_rock_5_a" },
+	{ full = "bzzz_prop_mine_coal_big", empty = "bzzz_prop_mine_coal_b"},
+	{ full = "bzzz_prop_mine_copper_big", empty = "bzzz_prop_mine_copper_b"},
+	{ full = "bzzz_prop_mine_iron_big", empty = "bzzz_prop_mine_iron_b"},
+	{ full = "bzzz_prop_mine_silver_big", empty = "bzzz_prop_mine_silver_b"},
+	{ full = "bzzz_prop_mine_crystal_big", empty = "bzzz_prop_mine_crystal_b"},
+	{ full = "bzzz_prop_mine_stone_big", empty = "bzzz_prop_mine_stone_b"},
 }
 if Config.General.K4MB1Prop then
 	propTable = {
-		{ full = "cs_x_rubweec", empty = "prop_rock_5_a" },
-		{ full = "k4mb1_crystalblue", empty = "k4mb1_crystalempty" },
-		{ full = "k4mb1_crystalgreen", empty = "k4mb1_crystalempty" },
-		{ full = "k4mb1_crystalred", empty = "k4mb1_crystalempty" },
-		{ full = "k4mb1_bauxiteore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_coal2", },
-		{ full = "k4mb1_copperore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_ironore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_goldore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_leadore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_tinore2", empty = "k4mb1_emptyore2" },
-		{ full = "k4mb1_diamond", },
+		{ full = "bzzz_prop_mine_stone_a", empty = "prop_rock_5_a" },
+		{ full = "bzzz_prop_mine_coal_a"},
+		{ full = "bzzz_prop_mine_copper"},
+		{ full = "bzzz_prop_mine_iron_a"},
+		{ full = "bzzz_prop_mine_silver_a"},
+		{ full = "bzzz_prop_mine_crystal_a"},
+		{ full = "bzzz_prop_mine_stone_a"},
+		-- { full = "k4mb1_crystalblue", empty = "k4mb1_crystalempty" },
+		-- { full = "k4mb1_crystalgreen", empty = "k4mb1_crystalempty" },
+		-- { full = "k4mb1_crystalred", empty = "k4mb1_crystalempty" },
+		-- { full = "k4mb1_bauxiteore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_coal2", },
+		-- { full = "k4mb1_copperore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_ironore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_goldore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_leadore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_tinore2", empty = "k4mb1_emptyore2" },
+		-- { full = "k4mb1_diamond", },
 	}
 end
 
@@ -114,6 +126,36 @@ Mining.Functions.setupMiningTarget = function(name, coords, prop, emptyProp, set
 	}, 1.7)
 end
 
+local randomRewards = {
+	{item = 'carbon', chance = 20},
+	{item = 'ironore', chance = 20},
+	{item = 'copperore', chance = 20},
+	{item = 'sulfur_chunk', chance = 20},
+	{item = 'stone', chance = 20},
+}
+local function getRandomRewards()
+	-- Calculate total chance
+	local totalChance = 0
+	for _, reward in pairs(randomRewards) do
+		totalChance = totalChance + reward.chance
+	end
+	
+	-- Generate random number between 1 and totalChance
+	local randomNum = math.random(1, totalChance)
+	
+	-- Find the selected item based on cumulative probability
+	local cumulativeChance = 0
+	for _, reward in pairs(randomRewards) do
+		cumulativeChance = cumulativeChance + reward.chance
+		if randomNum <= cumulativeChance then
+			return reward.item
+		end
+	end
+	
+	-- Fallback (should never reach here if chances are properly configured)
+	return randomRewards[1].item
+end
+
 Mining.Functions.makeJob = function()
 	Mining.Functions.removeJob()
 	if Locations["Mines"]["MineShaft"].Enable then
@@ -127,7 +169,7 @@ Mining.Functions.makeJob = function()
 			if loc["OrePositions"] then
 				for i, coords in ipairs(loc["OrePositions"]) do
 					local name = "Ore".."_"..mine.."_"..i
-					local chosenProp, reward = propTable[math.random(#propTable)], "stone"
+					local chosenProp, reward = propTable[math.random(#propTable)], getRandomRewards()
 
 					if Config.General.AltMining then
 						local weightedReward = Mining.Functions.weightedRandomReward()

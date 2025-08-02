@@ -87,17 +87,17 @@ Config = {
 	},
 
 	setMiningTable = {	-- Set rarity of ore spawn for AltMining
-		{ name = "carbon", rarity = "common", prop = "k4mb1_coal2", },
-		{ name = "copperore", rarity = "common", prop = "k4mb1_copperore2", },
-		{ name = "ironore", rarity = "common", prop = "k4mb1_ironore2", },
+		{ name = "carbon", rarity = "common", prop = "bzzz_prop_mine_coal_a", },
+		{ name = "copperore", rarity = "common", prop = "bzzz_prop_mine_copper", },
+		{ name = "ironore", rarity = "common", prop = "bzzz_prop_mine_iron_a", },
 	--	{ name = "carbon", rarity = "common", prop = "k4mb1_leadore2" },
 	--	{ name = "goldore", rarity = "rare", prop = "k4mb1_goldore2" },
-		{ name = "silverore", rarity = "rare", prop = "k4mb1_tinore2" },
-		{ name = "sulfur_chunk", rarity = "ultra_rare", prop = "k4mb1_crystalred" },
+		{ name = "silverore", rarity = "rare", prop = "bzzz_prop_mine_silver_a" },
+		{ name = "sulfur_chunk", rarity = "ultra_rare", prop = "bzzz_prop_mine_crystal_a" },
 	--	{ name = "uncut_emerald", rarity = "ultra_rare", prop = "k4mb1_crystalgreen" },
-	--	{ name = "uncut_diamond", rarity = "ultra_rare", prop = "k4mb1_diamond" },
+	--	{ name = "uncut_diamond", rarity = "ultra_rare", prop = "bzzz_prop_mine_diamond_a" },
 	--	{ name = "uncut_sapphire", rarity = "ultra_rare", prop = "k4mb1_crystalblue" },
-		{ name = "stone", rarity = "common", prop = "cs_x_rubweec" },
+		{ name = "stone", rarity = "common", prop = "bzzz_prop_mine_stone_a" },
 	},
 
 ------------------------------------------------------------
