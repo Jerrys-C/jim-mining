@@ -24,12 +24,47 @@ RegisterServerEvent(getScript()..":Reward", function(data)
 	if data.mine then
 
 		local amount = GetTiming(Config.PoolAmounts.Mining.AmountPerSuccess)
-		local carryCheck = canCarry({ [data.setReward] = amount }, src)
-
-		if carryCheck[data.setReward] then
-			addItem(data.setReward, amount,  nil, src)
+		
+		-- Check if setReward is a table (list) or a single item
+		if type(data.setReward) == "table" then
+			-- Handle multiple rewards
+			local carryCheckTable = {}
+			for _, rewardData in pairs(data.setReward) do
+				local itemName = rewardData.item
+				local itemAmount = rewardData.amount or amount
+				carryCheckTable[itemName] = itemAmount
+			end
+			
+			local carryCheck = canCarry(carryCheckTable, src)
+			local canCarryAll = true
+			
+			-- Check if player can carry all items
+			for itemName, _ in pairs(carryCheckTable) do
+				if not carryCheck[itemName] then
+					canCarryAll = false
+					break
+				end
+			end
+			
+			if canCarryAll then
+				-- Give all items
+				for _, rewardData in pairs(data.setReward) do
+					local itemName = rewardData.item
+					local itemAmount = rewardData.amount or amount
+					addItem(itemName, itemAmount, nil, src)
+				end
+			else
+				triggerNotify(nil, locale("error", "full"), "error", src)
+			end
 		else
-			triggerNotify(nil, locale("error", "full"), "error", src)
+			-- Handle single reward (original logic)
+			local carryCheck = canCarry({ [data.setReward] = amount }, src)
+			
+			if carryCheck[data.setReward] then
+				addItem(data.setReward, amount, nil, src)
+			else
+				triggerNotify(nil, locale("error", "full"), "error", src)
+			end
 		end
 
 	elseif data.crack then

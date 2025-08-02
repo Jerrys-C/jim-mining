@@ -127,33 +127,35 @@ Mining.Functions.setupMiningTarget = function(name, coords, prop, emptyProp, set
 end
 
 local randomRewards = {
-	{item = 'carbon', chance = 20},
-	{item = 'ironore', chance = 20},
-	{item = 'copperore', chance = 20},
-	{item = 'sulfur_chunk', chance = 20},
-	{item = 'stone', chance = 20},
+	{item = 'carbon', chance = 100, amount = 1},
+	{item = 'ironore', chance = 50, amount = {min = 1, max = 3}},
+	{item = 'copperore', chance = 60, amount = {min = 1, max = 3}},
+	{item = 'sulfur_chunk', chance = 40, amount = {min = 1, max = 2}},
+	{item = 'stone', chance = 100, amount = {min = 1, max = 3}},
 }
 local function getRandomRewards()
-	-- Calculate total chance
-	local totalChance = 0
-	for _, reward in pairs(randomRewards) do
-		totalChance = totalChance + reward.chance
-	end
+	local rewards = {}
 	
-	-- Generate random number between 1 and totalChance
-	local randomNum = math.random(1, totalChance)
-	
-	-- Find the selected item based on cumulative probability
-	local cumulativeChance = 0
+	-- Check each reward based on its chance
 	for _, reward in pairs(randomRewards) do
-		cumulativeChance = cumulativeChance + reward.chance
-		if randomNum <= cumulativeChance then
-			return reward.item
+		local randomChance = math.random(1, 100)
+		if randomChance <= reward.chance then
+			local amount = reward.amount
+			-- Handle amount range if it's a table with min/max
+			if type(amount) == "table" and amount.min and amount.max then
+				amount = math.random(amount.min, amount.max)
+			end
+			
+			-- Add reward to the table
+			table.insert(rewards, {
+				item = reward.item,
+				amount = amount
+			})
 		end
 	end
 	
-	-- Fallback (should never reach here if chances are properly configured)
-	return randomRewards[1].item
+	-- Return rewards table (format: item=xxx, amount=x for each entry)
+	return rewards
 end
 
 Mining.Functions.makeJob = function()
