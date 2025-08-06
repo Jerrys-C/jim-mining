@@ -93,6 +93,7 @@ Locations = {
             },
             Smelting = {
                 { blipEnable = false, name = "冶炼厂", coords = vec3(1112.29, -2009.9, 31.46), sprite = 436, col = 1,  },
+                { blipEnable = false, name = "冶炼厂", coords = vec3(222.34, 2785.44, 32.12), sprite = 436, col = 1,  },
             },
             Cracking = {
                 { blipEnable = false, name = "石头破碎", coords = vec4(1109.19, -1992.8, 30.98, 146.88), sprite = 566, col = 81, prop = "prop_vertdrill_01" },
