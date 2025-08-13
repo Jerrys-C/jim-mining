@@ -111,7 +111,7 @@ Locations = {
             Enable = true,
             Job = nil,
             Blip = {
-                Enable = true,
+                Enable = false,
                 name = "矿井",
                 coords = vec4(-596.74, 2090.99, 131.41, 16.6),
                 sprite = 527,
@@ -212,7 +212,7 @@ Locations = {
             },
         },
         ["K4MB1Quarry"] = { -- K4MB1在采石场的矿井
-            Enable = false,
+            Enable = true,
             Job = nil,
             Blip = {
                 Enable = false,
@@ -277,17 +277,17 @@ Locations = {
             },
         },
         ["K4MB1Shaft"] = { -- K4MB1的矿井替代
-            Enable = false,
+            Enable = true,
             Job = nil,
             Blip = {
-                Enable = true,
+                Enable = false,
                 name = "矿井",
                 coords = vec4(-596.74, 2090.99, 131.41, 16.6),
                 sprite = 527,
                 col = 81,
             },
             Store = {
-                -- { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
+                { name = "矿洞", coords = vec4(-594.96, 2091.3, 131.47, 67.65), model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD",  },
             },
             Lights = { Enable = false, },
             OrePositions = {

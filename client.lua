@@ -19,12 +19,21 @@ local propTable = {
 if Config.General.K4MB1Prop then
 	propTable = {
 		{ full = "bzzz_prop_mine_stone_a", empty = "prop_rock_5_a" },
-		{ full = "bzzz_prop_mine_coal_a"},
-		{ full = "bzzz_prop_mine_copper"},
-		{ full = "bzzz_prop_mine_iron_a"},
-		{ full = "bzzz_prop_mine_silver_a"},
-		{ full = "bzzz_prop_mine_crystal_a"},
-		{ full = "bzzz_prop_mine_stone_a"},
+		{ full = "bzzz_prop_mine_coal_big", empty = "bzzz_prop_mine_coal_b"},
+		{ full = "bzzz_prop_mine_copper_big", empty = "bzzz_prop_mine_copper_b"},
+		{ full = "bzzz_prop_mine_iron_big", empty = "bzzz_prop_mine_iron_b"},
+		{ full = "bzzz_prop_mine_silver_big", empty = "bzzz_prop_mine_silver_b"},
+		{ full = "bzzz_prop_mine_crystal_big", empty = "bzzz_prop_mine_crystal_b"},
+		{ full = "bzzz_prop_mine_stone_big", empty = "bzzz_prop_mine_stone_b"},
+		{ full = "bzzz_prop_mine_diamond_big"},
+		{ full = "bzzz_prop_mine_emerald_big"},
+		{ full = "bzzz_prop_mine_garnet_big"},
+		{ full = "bzzz_prop_mine_gold_big"},
+		{ full = "bzzz_prop_mine_lead_big"},
+		{ full = "bzzz_prop_mine_nefrit_big"},
+		{ full = "bzzz_prop_mine_quartz_big"},
+		{ full = "bzzz_prop_mine_ruby_big"},
+		{ full = "bzzz_prop_mine_sapphire_big"},
 		-- { full = "k4mb1_crystalblue", empty = "k4mb1_crystalempty" },
 		-- { full = "k4mb1_crystalgreen", empty = "k4mb1_crystalempty" },
 		-- { full = "k4mb1_crystalred", empty = "k4mb1_crystalempty" },
@@ -181,10 +190,11 @@ Mining.Functions.makeJob = function()
 						}
 						reward = weightedReward.name
 					end
-					local mainProp = Mining.Functions.spawnProp(coords, chosenProp.full, Config.General.K4MB1Prop and 0.8 or 1.1)
+					local adjustHeight = chosenProp.full:find("bzzz") and 1.1 or 0.8
+					local mainProp = Mining.Functions.spawnProp(coords, chosenProp.full, adjustHeight)
 					local emptyProp
 					if chosenProp.empty then
-						emptyProp = Mining.Functions.spawnProp(coords, chosenProp.empty, Config.General.K4MB1Prop and 0.8 or 1.1)
+						emptyProp = Mining.Functions.spawnProp(coords, chosenProp.empty, adjustHeight)
 					end
 					Mining.Functions.setupMiningTarget(name, coords, mainProp, emptyProp, reward, loc.Job)
 				end
@@ -415,7 +425,7 @@ Mining.Other.stoneBreak = function(name, stone, coords, job, rot, empty)
 		local prop, emptyProp, setReward = stone, empty, "stone"
 		removeZoneTarget(Targets[name])
 		Targets[name] = nil
-
+		setReward = getRandomRewards()
 		if Config.General.AltMining then
 			destroyProp(prop)
 			Wait(debugMode and 2000 or GetTiming(Config.Timings["OreRespawn"]))

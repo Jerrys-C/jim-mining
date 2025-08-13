@@ -13,13 +13,13 @@ Config = {
 		JimShops = false, 		-- Set this to true if using jim-shops for the shops
 		DrillSound = true,		-- enable/disable drill sounds
 
-		K4MB1Prop = false, 		-- Enable this to make use of K4MB1's ore props provided with their Mining Cave MLO
+		K4MB1Prop = true, 		-- Enable this to make use of K4MB1's ore props provided with their Mining Cave MLO
 
 		AltMining = false,		-- Enables Alternate mining (enhanced with k4mb1's mining ore props)
 								-- Changes system to one based on rarity of ores specified in setMiningTable below
 								-- Every ore that spawns will give specific ores
 
-		K4MB1Cart = false,		-- If using k4mb1's shaftcave mlo + caveprops
+		K4MB1Cart = true,		-- If using k4mb1's shaftcave mlo + caveprops
 								-- Allow players to use a minecart to get to the chambers faster
 								-- Add's target option to the store ped at the mine shaft
 
@@ -103,17 +103,17 @@ Config = {
 ------------------------------------------------------------
 --Mining Store Items
 	Items = {
-		label = "采矿商店",  slots = 9,
+		label = "采矿商店",  slots = 1,
 		items = {
-			{ name = "water", price = 2, amount = 100, info = {}, type = "item", slot = 1, },
-			{ name = "sandwich", price = 2, amount = 250, info = {}, type = "item", slot = 2, },
-			{ name = "bandage", price = 25, amount = 100, info = {}, type = "item", slot = 3, },
-			{ name = "weapon_flashlight", price = 75, amount = 100, info = {}, type = "item", slot = 4, },
-			{ name = "goldpan", price = 25, amount = 100, info = {}, type = "item", slot = 5, },
-			{ name = "pickaxe",	price = 100, amount = 100, info = {}, type = "item", slot = 6, },
-			{ name = "miningdrill",	price = 10000, amount = 50, info = {}, type = "item", slot = 7, },
-			{ name = "mininglaser",	price = 60000, amount = 5, info = {}, type = "item", slot = 8, },
-			{ name = "drillbit", price = 0, amount = 100, info = {}, type = "item", slot = 9, },
+			{ name = "water", price = 20, amount = 100, info = {}, type = "item", slot = 1, },
+			-- { name = "sandwich", price = 2, amount = 250, info = {}, type = "item", slot = 2, },
+			-- { name = "bandage", price = 25, amount = 100, info = {}, type = "item", slot = 3, },
+			-- { name = "weapon_flashlight", price = 75, amount = 100, info = {}, type = "item", slot = 4, },
+			-- { name = "goldpan", price = 25, amount = 100, info = {}, type = "item", slot = 5, },
+			-- { name = "pickaxe",	price = 100, amount = 100, info = {}, type = "item", slot = 6, },
+			-- { name = "miningdrill",	price = 10000, amount = 50, info = {}, type = "item", slot = 7, },
+			-- { name = "mininglaser",	price = 60000, amount = 5, info = {}, type = "item", slot = 8, },
+			-- { name = "drillbit", price = 0, amount = 100, info = {}, type = "item", slot = 9, },
 		},
 	},
 }
