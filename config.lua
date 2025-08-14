@@ -32,7 +32,7 @@ Config = {
 	},
 
 	Timings = { -- Time it takes to do things
-		Cracking = { 15000, 25000 }, -- 15 - 25 seconds
+		Cracking = { 10000, 20000 }, -- 10 - 20 seconds
 		Washing = { 15000, 25000 }, -- 15 - 25 seconds
 		Panning = { 45000, 50000 },-- 45 - 50 seconds
 		Pickaxe = { 30000, 45000 }, --  30 - 45 seconds
