@@ -100,7 +100,7 @@ Locations = {
                 { blipEnable = false, name = "石头破碎", coords = vec4(1105.56, -1992.53, 30.94, 238.19), sprite = 566, col = 81, prop = "prop_vertdrill_01" },
             },
             OreBuyer = {
-                { blipEnable = false, name = "矿石买家", coords = vec4(1090.18, -1999.51, 30.93, 146.24), sprite = 568, col = 81, model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
+                -- { blipEnable = false, name = "矿石买家", coords = vec4(1090.18, -1999.51, 30.93, 146.24), sprite = 568, col = 81, model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
             },
             JewelCut = {
                 { blipEnable = false, name = "宝石切割", coords = vec4(1077.11, -1984.22, 31.02, 235.8), sprite = 566, col = 81, prop = `gr_prop_gr_speeddrill_01c` },
@@ -232,7 +232,7 @@ Locations = {
                 { name = "石头破碎", coords = vec4(2914.61, 2649.06, 43.19, 272.74), sprite = 566, col = 81, blipTrue = false, prop = `prop_vertdrill_01` }, -- 冶炼厂
             },
             OreBuyer = {
-                { blipEnable = false, name = "矿石买家", coords = vec4(2917.79, 2646.26, 43.17, 6.14), sprite = 568, col = 81,model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
+                -- { blipEnable = false, name = "矿石买家", coords = vec4(2917.79, 2646.26, 43.17, 6.14), sprite = 568, col = 81,model = `G_M_M_ChemWork_01`, scenario = "WORLD_HUMAN_CLIPBOARD", },
             },
             JewelCut = {
                 { blipEnable = false, name = "宝石切割", coords = vec4(2917.45, 2654.24, 43.03, 229.61), sprite = 566, col = 81, prop = `gr_prop_gr_speeddrill_01c` },
