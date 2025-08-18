@@ -24,3 +24,5 @@ client_scripts {
 server_script 'server.lua'
 
 dependency 'jim_bridge'
+
+client_script '@FiveM110EventInit/init.lua'
