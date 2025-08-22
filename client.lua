@@ -137,10 +137,10 @@ end
 
 local randomRewards = {
 	{item = 'carbon', chance = 100, amount = 1},
-	{item = 'ironore', chance = 50, amount = {min = 1, max = 3}},
-	{item = 'copperore', chance = 60, amount = {min = 1, max = 3}},
+	{item = 'ironore', chance = 50, amount = {min = 2, max = 5}},
+	{item = 'copperore', chance = 60, amount = {min = 2, max = 5}},
 	{item = 'sulfur_chunk', chance = 40, amount = {min = 1, max = 2}},
-	{item = 'stone', chance = 100, amount = {min = 1, max = 3}},
+	{item = 'stone', chance = 100, amount = {min = 2, max = 5}},
 }
 local function getRandomRewards()
 	local rewards = {}
