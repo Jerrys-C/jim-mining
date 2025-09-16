@@ -74,7 +74,7 @@ Config = {
 	--	{ item = "copperore",rarity = "80",},
 		{ item = "uncut_ruby", rarity = "20" },
 		{ item = "uncut_emerald", rarity = "20"},
-		{ item = "uncut_diamond", rarity = "5"},
+		{ item = "uncut_diamond", rarity = "3"},
 		{ item = "uncut_sapphire", rarity = "20"},
 	},
 
