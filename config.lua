@@ -32,8 +32,8 @@ Config = {
 	},
 
 	Timings = { -- Time it takes to do things
-		Cracking = { 10000, 20000 }, -- 10 - 20 seconds
-		Washing = { 15000, 25000 }, -- 15 - 25 seconds
+		Cracking = { 15000, 25000 }, -- 15 - 25 seconds
+		Washing = { 20000, 35000 }, -- 20 - 35 seconds
 		Panning = { 45000, 50000 },-- 45 - 50 seconds
 		Pickaxe = { 30000, 45000 }, --  30 - 45 seconds
 		Mining = { 45000, 50000 }, -- 45 - 50 seconds
@@ -47,15 +47,15 @@ Config = {
 			AmountPerSuccess = { 1, 3 }		-- Per success, this will give 1 - 3 of the selected item
 		},
 		Cracking = {
-			AmountPerSuccess = { 1, 3 }		-- Per success, this will give 1 - 3 of the selected item
+			AmountPerSuccess = { 1, 2 }		-- Per success, this will give 1 - 3 of the selected item
 		},
 		Panning = {
 			Successes = { 1, 2 },			-- When complete, default will give 1 or 2 items
-			AmountPerSuccess = { 1, 3 }		-- Per success, this will give 1 - 3 of the selected item
+			AmountPerSuccess = { 1, 2 }		-- Per success, this will give 1 - 3 of the selected item
 		},
 		Washing = {
 			Successes = { 1, 2 },			-- When complete, default will give 1 or 2 items
-			AmountPerSuccess = { 1, 3 }		-- Per success, this will give 1 - 3 of the selected item
+			AmountPerSuccess = { 1, 2 }		-- Per success, this will give 1 - 3 of the selected item
 		},
 
 	},
@@ -74,13 +74,13 @@ Config = {
 	--	{ item = "copperore",rarity = "80",},
 		{ item = "uncut_ruby", rarity = "20" },
 		{ item = "uncut_emerald", rarity = "20"},
-		{ item = "uncut_diamond", rarity = "3"},
+		{ item = "uncut_diamond", rarity = "2"},
 		{ item = "uncut_sapphire", rarity = "20"},
 	},
 
 	PanPool = {		-- Rewards from panning
 		{ item = "can", rarity = "90", },
-		{ item = "goldore", rarity = "10", },
+		{ item = "goldore", rarity = "5", },
 		{ item = "bottle", rarity = "10", },
 		{ item = "stone", rarity = "90", },
 		{ item = "silverore", rarity = "10", },
